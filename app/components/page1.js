@@ -118,8 +118,8 @@ class page1 extends Component {
                         style={[styles.centered, {marginTop: Constant.matginTop}]}
                         onPress={() => {
                             alert("click login-" + this.params.userName + "-" + this.params.password)
-                            Actions.reset("page2");
-
+                            Actions.key("page2");
+c
                         }}
                     >
                         <View style={[styles.centered, {
