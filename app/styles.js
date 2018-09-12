@@ -1,11 +1,42 @@
-import React, {StyleSheet, Dimensions, Platform} from 'react-native';
+import React, {StyleSheet, Dimensions, Platform, StatusBar} from 'react-native';
 import * as Constant from "./constant";
 
 export const screenWidth = Dimensions.get("window").width;
 export const screenHeight = Dimensions.get("window").height;
 // export  const screenHeight=Dimensions.get("window").height;
+export const navBarHeight = (Platform.OS == 'ios') ? Constant.iosnavHeaderHeight : Constant.andrnavHeaderHeight;
+export const statusHeight = (Platform.OS == 'ios') ? StatusBar.currentHeight : 25;
+
 
 const styles = StyleSheet.create({
+//适用于所有场景的Style（可选）
+    routerStyle: {
+        //设置router的样式
+        flex: 1,
+        backgroundColor: Constant.white,
+        shadowColor: null,
+        shadowOffset: null,
+        shadowOpacity: null,
+        shadowRadius: null,
+
+    },
+    navigationBar: {
+        backgroundColor: Constant.barColor,
+        paddingTop: StatusBar.currentHeight,
+        height: navBarHeight,
+
+
+    },
+    //        textAlign: 'center',
+    toolBar: {
+        backgroundColor: Constant.primaryColorLight,
+        height: navBarHeight,
+        justifyContent:'center',
+        alignContent:'center',
+        fontSize: 18,
+color:Constant.textColor56,
+    },
+
 
     centered: {
         justifyContent: "center",
@@ -13,9 +44,9 @@ const styles = StyleSheet.create({
 
 
     },
-    loginText:{
-        color:Constant.white,
-        fontSize:Constant.textSize18,
+    loginText: {
+        color: Constant.white,
+        fontSize: Constant.textSize18,
     },
     absoluteFull: {
         position: "absolute",
@@ -28,9 +59,6 @@ const styles = StyleSheet.create({
 
     list: {
         backgroundColor: '#565656',
-        padding: 12,
-
-
     },
     container: {
         flex: 1,

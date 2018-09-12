@@ -68,15 +68,11 @@ class page1 extends Component {
             clearButtonMode: "always"
         };
         return (
-            <Animated.View
-
-            >
-
+            <Animated.View>
                 <StatusBar hidden={false} backgroundColor={Constant.primaryColor} barStyle={"light-content"}>
                 </StatusBar>
-                <View style={[styles.centered, {marginTop: Constant.matginTop}]}>
-                    <Text> please write</Text>
-
+                <View style={[styles.centered, {marginTop: Constant.marginTop}]}>
+                    <Text style={{marginTop:Constant.marginTop*2}}> please write</Text>
                     <Image source={require("../img/default_img.png")}
                            resizeMode={"contain"}
                            style={{width: 80, height: 80}}/>
@@ -88,7 +84,7 @@ class page1 extends Component {
                     borderRadius: 10,
 
                 }]}>
-                    <View style={[styles.centered, {marginTop: Constant.matginTop * 2}]}>
+                    <View style={[styles.centered, {marginTop: Constant.marginTop * 2}]}>
                         <Fumi
                             ref={"userNameInput"}
                             {...textInputProps}
@@ -101,7 +97,7 @@ class page1 extends Component {
                         />
 
                     </View>
-                    <View style={[styles.centered, {marginTop: Constant.matginTop}]}>
+                    <View style={[styles.centered, {marginTop: Constant.marginTop}]}>
                         <Fumi
                             ref={"passwordInput"}
                             {...textInputProps}
@@ -115,18 +111,17 @@ class page1 extends Component {
 
                     </View>
                     <TouchableOpacity
-                        style={[styles.centered, {marginTop: Constant.matginTop}]}
+                        style={[styles.centered, {marginTop: Constant.marginTop}]}
                         onPress={() => {
-                            alert("click login-" + this.params.userName + "-" + this.params.password)
-                            Actions.key("page2");
-c
-                        }}
-                    >
+                            Actions.reset("page2");
+                            // alert("click login-" + this.params.userName + "-" + this.params.password)
+                            // Actions.key("page2").call;
+                        }}>
                         <View style={[styles.centered, {
                             backgroundColor: Constant.primaryColorLight,
                             width: 230,
-                            marginTop: Constant.matginTop,
-                            paddingHorizontal: Constant.nomalPadding,
+                            marginTop: Constant.marginTop,
+                            paddingHorizontal: Constant.normalPadding,
                             borderRadius: 5,
                         }]}>
 

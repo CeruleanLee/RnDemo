@@ -8,7 +8,7 @@ var REQUEST_URL =
     "https://raw.githubusercontent.com/facebook/react-native/0.51-stable/docs/MoviesExample.json";
 type Props = {};
 
-export default class page2 extends Component {
+export default class page3 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -35,6 +35,8 @@ export default class page2 extends Component {
                     // movies: responseData.movies,
                 });
             });
+
+
     }
 
 
@@ -47,7 +49,7 @@ export default class page2 extends Component {
                 <StatusBar hidden={false} backgroundColor={Constant.primaryColorLight} translucent
                            barStyle={'light-content'}/>
                 {/*<Text style={[styles.toolBar]}>title</Text>*/}
-                <ToolbarAndroid title={"demo list"} style={[styles.toolBar,{marginTop:Constant.marginTop}]} logo={require('../img/back.png')}
+                <ToolbarAndroid title={"list 2"} style={[styles.toolBar,{marginTop:Constant.marginTop}]} logo={require('../img/back.png')}
                                 actions={[{title: 'Settings', icon: require('../img/more_if.png'), show: 'always'}]}
                                 onActionSelected={this.onActionSelected}/>
                 <FlatList renderItem={this.renderMovie} data={this.state.data}
@@ -58,6 +60,7 @@ export default class page2 extends Component {
 
     onActionSelected(position) {
         if (position === 0) { // index of 'Settings'
+            alert("click setting")
             Actions.reset("page3");
         }
     }
@@ -84,6 +87,8 @@ export default class page2 extends Component {
             <View style={styles.container}>
                 <Text>正在加载...</Text>
             </View>
+
+
         );
     }
 
@@ -91,14 +96,20 @@ export default class page2 extends Component {
 
         return (
             <View style={styles.container}>
+
                 <Image style={styles.thumnail}
                        source={{uri: item.posters.thumbnail}}/>
                 <View style={styles.rightcontainer}>
+
                     <Text style={styles.title}>{item.title}</Text>
                     <Text style={styles.year}>{item.year}</Text>
                 </View>
+
             </View>
+
+
         );
+
     }
 }
 var MOCKED_MOVIES_DATA = [
